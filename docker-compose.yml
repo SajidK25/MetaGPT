@@ -1,0 +1,13 @@
+version: "3"
+services:
+  metagpt:
+    container_name: metagpt
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    image: metagpt/metagpt:v0.3.1
+    privileged: true
+    volumes:
+      - ./config/config.yaml:/app/metagpt/config/key.yaml
+      - ./workspace:/app/metagpt/workspace
+    # command: ["python","startup.py", "Write a cli snake game"]
