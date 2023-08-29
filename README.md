@@ -120,7 +120,29 @@ The command `docker run ...` do the following things:
 git clone https://github.com/geekan/MetaGPT.git
 cd MetaGPT && docker build -t metagpt:custom .
 ```
+### Installation by Docker-compose
 
+```bash
+# Step 1: clone the MetaGPT repository
+
+git clone https://github.com/SajidK25/MetaGPT.git
+
+cd MetaGPT
+
+# Step 2: build metagpt image with docker-compose commands
+
+docker compose build
+
+# Step 3: start a container and execute commands in it
+
+docker compose up -d
+
+# Step 3: execute commands in it
+
+docker exec -it metagpt /bin/bash
+
+$ python startup.py "Write a cli snake game"
+```
 ## Configuration
 
 - Configure your `OPENAI_API_KEY` in any of `config/key.yaml / config/config.yaml / env`
